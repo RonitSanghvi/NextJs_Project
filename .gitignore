@@ -9,9 +9,6 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-src/app/gallery/page.tsx
-src/app/gallery/test1.tsx
-src/app/gallery/test2.tsx
 
 # testing
 /coverage

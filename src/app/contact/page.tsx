@@ -36,23 +36,22 @@ export default function ContactSection() {
           Contact Section
         </h3>
         <h1 className="text-4xl md:text-5xl font-bold">Get in touch</h1>
-        <p className="text-lg text-[#2d1b2e]/80">
-          We&apos;d love to hear from you! Whether you have a question, need
-          assistance, or just want to say hello—our team is ready to help.
+        <p className="text-lg text-[#2d1b2e]/80 pe-8">
+          For any inquires or questions regarding temple events and timings, you can check on events page. For more information, feel free to reach out to us using the contact details below or by filling out the contact form.
         </p>
 
         <div className="space-y-4">
           <p className="flex items-center space-x-3">
             <FiPhone className="text-[#5abab6] text-xl" />
-            <span>406-555-0120</span>
+            <span>+1 289-623-0006</span>
           </p>
           <p className="flex items-center space-x-3">
             <FiMail className="text-[#5abab6] text-xl" />
-            <span>hello@example.com</span>
+            <span>ronitsanghvi2000@gmail.com</span>
           </p>
           <p className="flex items-center space-x-3">
             <FiMapPin className="text-[#5abab6] text-xl" />
-            <span>192 Griffin Street, Gilbert, AZ 32521</span>
+            <span>Chitrakar Vasudev Pandya Marg, Pushkarna Nagar, Paldi, Ahmedabad, Gujarat 380007, India</span>
           </p>
         </div>
       </motion.div>

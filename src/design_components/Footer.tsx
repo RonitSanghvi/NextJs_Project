@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   return (
     <footer className="bg-[#2d1b2e] text-white py-12">
@@ -25,11 +27,11 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-[#f9b0c8] mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">About</a></li>
-              <li><a href="#services" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Services</a></li>
-              <li><a href="#events" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Events</a></li>
-              <li><a href="#contact" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Contact</a></li>
+              <li><Link href="/" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Home</Link></li>
+              <li><Link href="/pratima" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Pratima</Link></li>
+              <li><Link href="/gallery" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Gallery</Link></li>
+              <li><Link href="/events" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Events</Link></li>
+              <li><Link href="/contact" className="text-gray-300 hover:text-[#f9b0c8] transition-colors">Contact</Link></li>
             </ul>
           </div>
           

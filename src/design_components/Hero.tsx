@@ -1,6 +1,7 @@
 "use client";
-// import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Temple from "../assets/Temple.jpg";
 
 export function Hero() {
 
@@ -33,27 +34,6 @@ export function Hero() {
               Welcome to<br />
               <span className="text-[#ea5c95] tracking-wide">श्री सीमंधर स्वामी दिगंबर जैन मंदिर</span>
             </h1>
-
-            {/* <p className="text-lg text-[#6b4c57] mb-8 leading-relaxed">
-              A sacred place of worship and spiritual enlightenment, dedicated to the teachings 
-              of the Jain Tirthankaras. Experience peace, devotion, and the path to liberation 
-              in our divine sanctuary.
-            </p> */}
-
-              {/* Sliding Paragraph */}
-            {/* <div className="h-24 relative overflow-hidden mb-8">
-              {paragraphs.map((text, index) => (
-                <p
-                  key={index}
-                  className={`absolute left-0 right-0 text-lg text-[#6b4c57] leading-relaxed transition-opacity duration-700 ${
-                    index === current ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  {text}
-                </p>
-              ))}
-            </div> */}
-
              <div className="h-24 relative overflow-hidden mb-4">
               <div
                 className="flex transition-transform duration-1000 ease-in-out"
@@ -83,11 +63,12 @@ export function Hero() {
           </div>
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-              {/* <ImageWithFallback
-                src="https://images.unsplash.com/photo-1747487501299-d95d65c742a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYWluJTIwdGVtcGxlJTIwYXJjaGl0ZWN0dXJlfGVufDF8fHx8MTc1NzcyOTI5N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              <Image
+                src={Temple}
                 alt="Beautiful Jain Temple Architecture"
-                className="w-full h-full object-cover"
-              /> */}
+                className="w-full h-full object-cover border-2 border-[#5abab6] rounded-2xl transition-transform duration-300 transform hover:scale-105"
+              />
+              
             </div>
             <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#5abab6] rounded-full opacity-20"></div>
             <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#ea5c95] rounded-full opacity-20"></div>

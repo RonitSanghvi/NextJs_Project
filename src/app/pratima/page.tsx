@@ -142,7 +142,7 @@ function IdolCard({ idol }: { idol: Idol }) {
           {idol.name}
         </h3>
         <p className="text-sm text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
-        <p className="text-sm text-gray-800 leading-relaxed text-justify flex-1">{idol.description}</p>
+        {/* <p className="text-sm text-gray-800 leading-relaxed text-justify flex-1">{idol.description}</p> */}
       </div>
     </motion.article>
 

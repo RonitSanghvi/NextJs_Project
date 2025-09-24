@@ -37,14 +37,14 @@ export default function ContactSection() {
         </h3>
         <h1 className="text-4xl md:text-5xl font-bold">Get in touch</h1>
         <p className="text-lg text-[#2d1b2e]/80">
-          We'd love to hear from you! Whether you have a question, need
+          We&apos;d love to hear from you! Whether you have a question, need
           assistance, or just want to say hello—our team is ready to help.
         </p>
 
         <div className="space-y-4">
           <p className="flex items-center space-x-3">
             <FiPhone className="text-[#5abab6] text-xl" />
-            <span>(406) 555-0120</span>
+            <span>406-555-0120</span>
           </p>
           <p className="flex items-center space-x-3">
             <FiMail className="text-[#5abab6] text-xl" />

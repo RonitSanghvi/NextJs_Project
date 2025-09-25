@@ -156,10 +156,9 @@ export default function Page() {
   const standings = idols.filter((i) => i.type === "standing");
 
   return (
-    <main className="min-w-screen bg-[#FED9EB]">
+    <main className="min-w-screen bg-[#FED9EB] overflow-hidden">
       <Header />
 
-      {/* <div className="absolute top-40 right-64 w-36 h-36 blur-xl bg-[#5abab6] rounded-full opacity-50"></div> */}
       <motion.div 
         className="absolute bottom-40 left-64 w-36 h-36 blur-xl bg-[#ea5c95] rounded-full opacity-50" 
         style={{ top: "70%", left: "12%" }}
@@ -179,7 +178,7 @@ export default function Page() {
         className="absolute w-36 h-36 blur-xl bg-[#5ABAB6] rounded-full opacity-50"
         style={{ top: "12%", left: "70%" }}
         animate={{
-          x: [0, 165, -365, 55, 0],  
+          x: [0, -165, -365, 0, 0],  
           y: [0, 400, 450, 700, 0],
         }}
         transition={{
@@ -276,7 +275,7 @@ export default function Page() {
                   className="object-cover rounded-xl"
                 />
               </div>
-              <div className="px-16 py-10">
+              <div className="px-4 md:px-16 py-10">
                 <h3 className="text-5xl font-bold text-[#EA5C95]">{idol.name}</h3>
                 <p className="mt-2 text-2xl text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
                 <p className="mt-4 text-gray-800 leading-relaxed">{idol.description}</p>

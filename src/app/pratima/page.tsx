@@ -131,14 +131,14 @@ function IdolCard({ idol }: { idol: Idol }) {
           src={idol.image}
           alt={idol.name}
           fill
-          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 360px"
+          sizes="(max-width: 1024px) 45vw, 360px"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
 
       {/* Text Content */}
-      <div className="space-y-2 flex-1 flex flex-col">
-        <h3 className="text-lg md:text-xl font-extrabold tracking-tight text-[#EA5C95]">
+      <div className="space-y-2 flex flex-col">
+        <h3 className="text-md md:text-xl font-extrabold tracking-tight text-[#EA5C95]">
           {idol.name}
         </h3>
         <p className="text-sm text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
@@ -233,9 +233,9 @@ export default function Page() {
 
         {/* CAROUSEL for small idols */}
         <section className="mb-20">
-          <div className="border-b-2 border-[#EA5C95] mb-8"/>
-          <h2 className="text-4xl text-center font-bold mb-6 text-[#EA5C95]">Padmasan Pratimas</h2>
-          <div className="border-b-2 border-[#EA5C95] my-8"/>
+          <div className="border-b-2 border-[#EA5C95] my-4 md:mb-8"/>
+          <h2 className="text-2xl md:text-4xl text-center font-bold text-[#EA5C95]">Padmasan Pratimas</h2>
+          <div className="border-b-2 border-[#EA5C95] my-4 md:my-8"/>
 
           <div 
             className="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-4 "
@@ -251,9 +251,9 @@ export default function Page() {
 
         {/* TIMELINE for standing idols */}
         <section className="relative">
-          <div className="border-b-2 border-[#EA5C95] mb-8"/>
-          <h2 className="text-4xl text-center font-bold text-[#EA5C95]">Khadgasan Pratimas</h2>
-          <div className="border-b-2 border-[#EA5C95] my-8"/>
+          <div className="border-b-2 border-[#EA5C95] my-4 md:mb-8"/>
+          <h2 className="text-2xl md:text-4xl text-center font-bold text-[#EA5C95]">Khadgasan Pratimas</h2>
+          <div className="border-b-2 border-[#EA5C95] my-4 md:mb-8"/>
 
           {standings.map((idol, idx) => (
             <motion.div
@@ -276,8 +276,8 @@ export default function Page() {
                 />
               </div>
               <div className="px-4 md:px-16 py-10">
-                <h3 className="text-5xl font-bold text-[#EA5C95]">{idol.name}</h3>
-                <p className="mt-2 text-2xl text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
+                <h3 className="text-2xl md:text-5xl font-bold text-[#EA5C95]">{idol.name}</h3>
+                <p className="mt-2 text-lg md:text-2xl text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
                 <p className="mt-4 text-gray-800 leading-relaxed">{idol.description}</p>
               </div>
             </motion.div>

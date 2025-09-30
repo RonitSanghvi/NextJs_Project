@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# Ignore only gallery page
+src/app/gallery/page.tsx
+
 # production
 /build
 

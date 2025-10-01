@@ -113,25 +113,67 @@ const cardVariant = {
   show: { opacity: 1, y: 0, scale: 1 },
 };
 
-function IdolCard({ idol }: { idol: Idol }) {
-  const aspectClass = idol.type === "small" ? "aspect-square" : "aspect-[3/4]";
+function SectionHeading({ text }: { text: string }) {
+  return (
+    <div className="mb-8 md:mb-16">
+      <div className="border-b-2 border-[#EA5C95]" />
+        <h2 className="text-2xl md:text-4xl text-center my-4 md:my-6 font-bold text-[#EA5C95]">
+          {text}
+        </h2>
+      <div className="border-b-2 border-[#EA5C95]" />
+    </div>
+  );
+}
 
+function HeroHugeIdol({ idol }: { idol: Idol }) {
+  return (
+    <motion.section
+      initial={{ opacity: 0, y: 96 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.5 }}
+      className="relative mb-16 rounded-3xl shadow-2xl mx-4 md:mx-auto"
+    >
+      <div className="relative z-10 bg-white/40 backdrop-blur-md border border-[#EA5C95]/20 p-8 md:p-12 rounded-3xl">
+        <div className="flex flex-col md:flex-row items-center gap-8">
+          <div className="mx-auto w-full max-w-[520px] aspect-square rounded-2xl shadow-2xl ring-1 ring-[#EA5C95]/20">
+            <Image
+              src={idol.image}
+              alt={idol.name}
+              className="object-cover w-full h-full border-2 border-[#EA5C95] rounded-2xl"
+            />
+          </div>
+
+          <div className="flex-1">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#EA5C95]">
+              {idol.name}
+            </h2>
+            <p className="mt-2 text-2xl text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
+            <p className="mt-4 text-gray-800 leading-relaxed text-justify tracking-wide">
+              {idol.description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+}
+
+function IdolCard({ idol }: { idol: Idol }) {
   return (
     <motion.article
       variants={cardVariant}
-      initial = {{x:100, opacity:0}}
+      initial = {{x:250, opacity:0}}
       animate = {{x:0, opacity:1, transition: {duration:1.5,  delay: idol.id * 0.3}}}
       whileHover={{ y: -8, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 220, damping: 18, duration:0.5 }}
-      className="group relative overflow-hidden w-[320px] h-full flex flex-col rounded-2xl p-4 bg-white/40 backdrop-blur-md border border-[#EA5C95]/30 shadow-xl"
+      className="group relative overflow-hidden w-[250px] md:w-[320px] h-full flex flex-col rounded-2xl p-4 bg-white/40 backdrop-blur-md border border-[#EA5C95]/30 shadow-xl"
     >
       {/* Image */}
-      <div className={`${aspectClass}  rounded-xl overflow-hidden relative mb-4`}>
+      <div className={`aspect-square rounded-xl overflow-hidden relative mb-4`}>
         <Image
           src={idol.image}
           alt={idol.name}
           fill
-          sizes="(max-width: 1024px) 45vw, 360px"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
@@ -142,11 +184,8 @@ function IdolCard({ idol }: { idol: Idol }) {
           {idol.name}
         </h3>
         <p className="text-sm text-[#5ABAB6] font-semibold">Symbol: {idol.symbol}</p>
-        {/* <p className="text-sm text-gray-800 leading-relaxed text-justify flex-1">{idol.description}</p> */}
       </div>
     </motion.article>
-
-
   );
 }
 
@@ -163,7 +202,7 @@ export default function Page() {
         className="absolute bottom-40 left-64 w-36 h-36 blur-xl bg-[#ea5c95] rounded-full opacity-50" 
         style={{ top: "70%", left: "12%" }}
         animate={{
-          x: [0, -165, +365, -55, 0],  
+          x: [0, -165, +200, -55, 0],  
           y: [0, -400, -450, -700, 0],
         }}
         transition={{
@@ -176,9 +215,9 @@ export default function Page() {
 
       <motion.div
         className="absolute w-36 h-36 blur-xl bg-[#5ABAB6] rounded-full opacity-50"
-        style={{ top: "12%", left: "70%" }}
+        style={{ top: "12%", left: "60%" }}
         animate={{
-          x: [0, -165, -365, 0, 0],  
+          x: [0, -265, -365, 0, 0],  
           y: [0, 400, 450, 700, 0],
         }}
         transition={{
@@ -191,55 +230,18 @@ export default function Page() {
 
 
       <div className="max-w-7xl mx-auto">
-        <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl text-center font-bold tracking-wide text-[#EA5C95] pt-24">
-            Temple Pratima
-          </h1>
-          
-        </header>
+        <h1 className="mb-8 text-4xl md:text-5xl text-center font-bold tracking-wide text-[#EA5C95] pt-24">
+          Temple Pratima
+        </h1>
 
-        {/* HERO huge idol */}
-        <motion.section
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative mb-16 rounded-3xl overflow-hidden shadow-2xl"
-        >
-          <div className="relative z-10 bg-white/40 backdrop-blur-md border border-[#EA5C95]/20 p-8 md:p-12 rounded-3xl">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-
-
-              <div className="mx-auto w-full max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl ring-1 ring-[#EA5C95]/20">
-                <Image
-                  src={main.image}
-                  alt={main.name}
-                  sizes="(max-width: 768px) 90vw, 720px"
-                  className="object-cover w-full h-full border-2 border-[#EA5C95] rounded-2xl" 
-                />
-              </div>
-
-              <div className="flex-1">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-[#EA5C95]">
-                  {main.name}
-                </h2>
-                <p className="mt-2 text-2xl text-[#5ABAB6] font-semibold">Symbol: {main.symbol}</p>
-                <p className="mt-4 text-gray-800 leading-relaxed text-justify tracking-wide">
-                  {main.description}
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
+        {/* Simandhar Swami idol */}
+        <HeroHugeIdol idol={main} />
+        
         {/* CAROUSEL for small idols */}
         <section className="mb-20">
-          <div className="border-b-2 border-[#EA5C95] my-4 md:mb-8"/>
-          <h2 className="text-2xl md:text-4xl text-center font-bold text-[#EA5C95]">Padmasan Pratimas</h2>
-          <div className="border-b-2 border-[#EA5C95] my-4 md:my-8"/>
-
+          <SectionHeading text="Padmasan Pratimas" />
           <div 
             className="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-4 "
-            
           >
             {smalls.map((i) => (
               <div key={i.id} className="snap-center">
@@ -251,9 +253,7 @@ export default function Page() {
 
         {/* TIMELINE for standing idols */}
         <section className="relative">
-          <div className="border-b-2 border-[#EA5C95] my-4 md:mb-8"/>
-          <h2 className="text-2xl md:text-4xl text-center font-bold text-[#EA5C95]">Khadgasan Pratimas</h2>
-          <div className="border-b-2 border-[#EA5C95] my-4 md:mb-8"/>
+          <SectionHeading text="Khadgasan Pratimas" />
 
           {standings.map((idol, idx) => (
             <motion.div
